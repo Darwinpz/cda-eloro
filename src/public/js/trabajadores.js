@@ -32,7 +32,14 @@ $(document).ready(function () {
             {
                 targets: -1,
                 data: null,
-                defaultContent: "<a type='button' class='btn btn-success mb-2 btn-ver' ><i class='fas fa-eye'></i></a>"
+                render: function (data, type, row) {
+                    if (data[5] != null){
+                        return "<a type='button' class='btn btn-success mb-2 btn-ver' ><i class='fas fa-eye'></i></a>";
+                    }else{
+                        return  "<a type='button' class='btn btn-primary mb-2 btn-ver' ><i class='fas fa-eye'></i></a>";
+                    }
+                }
+                
             }
         ],
         pagingType: "full_numbers", //con esto salen los botones de primero anterior siguiente ultimo y los numeros de pagina
@@ -44,18 +51,18 @@ $(document).ready(function () {
 
     coleccionUsuarios.on('child_changed', datos => {
         
-        dataSet = [datos.key, datos.child("cedula").val(),datos.child("nombre").val(), datos.child("correo").val(), datos.child("rol").val()];
+        dataSet = [datos.key, datos.child("cedula").val(),datos.child("nombre").val(), datos.child("correo").val(), datos.child("rol").val(), datos.child("foto").val()];
         table.row(filaEditada).data(dataSet).draw();
 
     });
 
     coleccionUsuarios.on("child_added", datos => {
-        dataSet = [datos.key, datos.child("cedula").val(), datos.child("nombre").val(), datos.child("correo").val(), datos.child("rol").val()];
+        dataSet = [datos.key, datos.child("cedula").val(), datos.child("nombre").val(), datos.child("correo").val(), datos.child("rol").val(), datos.child("foto").val()];
         table.rows.add([dataSet]).draw();
     });
 
     coleccionUsuarios.on("child_removed", datos => {
-        dataSet = [datos.key, datos.child("cedula").val(), datos.child("nombre").val(), datos.child("correo").val(), datos.child("rol").val()];
+        dataSet = [datos.key, datos.child("cedula").val(), datos.child("nombre").val(), datos.child("correo").val(), datos.child("rol").val(), datos.child("foto").val()];
         table.row(filaEditada).data(dataSet).draw();
     });
 
