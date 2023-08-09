@@ -1,0 +1,63 @@
+<div class="modal fade" id="modaltrabajador" tabindex="-1" aria-labelledby="trabajadorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="trabajadorModalLabel">VISTA DEL TRABAJADOR</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form>
+                <div class="modal-body row" style="align-items: center;">
+
+                    <div class="col col-lg-3 col-sm-12 mb-2">
+
+                        <div class="card" id="foto-trabajador">
+
+                            <div class="border border-dark d-flex justify-content-center" style="height:300px">
+
+                                <img id="img_trabajador" src="/img/perfil.png" class="img-fluid">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col col-lg-9">
+                        <div class="row g-3">
+                            <input id="id" type="hidden"> <!-- ID que vamos a recibir de firebase -->
+
+                            <div class="col-lg-3 col-md-12 col-sm-12">
+                                <strong>Cedula:</strong>
+                                <label id="cedula" type="text" class="form-control border-primary"></label>
+                            </div>
+
+                            <div class="col-lg-9 col-md-12 col-sm-12">
+                                <strong>Nombre:</strong>
+                                <label id="nombre" type="text" class="form-control border-primary"></label>
+                            </div>
+                            <div class="col-lg-3 col-md-12 col-sm-12">
+                                <strong>Celular:</strong>
+                                <label id="celular" type="text" class="form-control border-primary"></label>
+                            </div>
+                            <div class="col-lg-9 col-md-12 col-sm-12">
+                                <strong>Correo:</strong>
+                                <label id="correo" type="text" class="form-control border-primary"></label>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <strong>Rol:</strong>
+                                <label id="rol" type="text" class="form-control border-primary"></label>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <strong>Canton:</strong>
+                                <label id="canton" type="text" class="form-control border-primary"></label>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

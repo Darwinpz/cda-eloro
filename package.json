@@ -1,0 +1,29 @@
+{
+  "name": "cda-eloro",
+  "version": "1.0.0",
+  "description": "CDA-ELORO",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darwinpz/cda-eloro.git"
+  },
+  "author": "Darwin Pilaloa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Darwinpz/cda-eloro/issues"
+  },
+  "homepage": "https://github.com/Darwinpz/cda-eloro#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

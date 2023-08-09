@@ -1,0 +1,27 @@
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>   
+
+<div class="table-responsive " style="margin-top: auto;">
+    <table id="table_trabajadores" width="100%" cellspacing="0" class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Cedula</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Ver</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            
+        </tbody>
+    </table>
+</div>
+
+{{> modals/trabajador}}
+
+
+<script src="/js/trabajadores.js"></script>
