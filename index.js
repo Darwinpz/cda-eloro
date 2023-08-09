@@ -1,4 +1,3 @@
-require('dotenv').config(); //Permite acceder al archivo .env del servidor
 
 const app = require("./src/app"); //Instancia de la aplicación
 
