@@ -7,7 +7,7 @@ const app = express();
 
 
 //PUERTO DEL SERVIDOR
-app.set('port', process.env.PORT); //Información colocada en el archivo .env
+app.set('port', process.env.PORT || process.env.PORTSERVER); //Información colocada en el archivo .env
 
 app.set('views', path.join(__dirname, 'views'));
 
