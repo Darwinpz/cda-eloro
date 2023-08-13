@@ -7,5 +7,12 @@ ctrl.inicio = async (req, res, next) => {
 
 };
 
+ctrl.buscar = async (req,res,next)=>{
+
+    const id = req.params.id;
+
+    res.render('ver_usuarios.hbs',{id:id});
+    
+}
 
 module.exports = ctrl;

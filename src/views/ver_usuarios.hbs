@@ -1,0 +1,90 @@
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase.js"></script>
+
+<div class="container mt-3">
+
+    <div class="row ">
+
+        <div class="col col-lg-12 col-md-12 col-sm-12">
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <h3>DETALLE DE TRABAJADOR CNE - EL ORO</h3>
+
+                </div>
+                <div class="card-body">
+
+                    <form>
+                        <div class="modal-body row" style="align-items: center;">
+
+                            <div class="col col-lg-3 col-md-12 col-sm-12 mb-2">
+
+                                <div class="card" id="foto-trabajador">
+
+                                    <div class="border border-dark d-flex justify-content-center" style="height:300px">
+
+                                        <img id="img_trabajador" src="" class="img-fluid">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col col-lg-9 col-md-12 col-sm-12">
+                                <div class="row g-3">
+                                    <input id="id" value="{{id}}" type="hidden"> <!-- ID que vamos a recibir de firebase -->
+
+                                    <div class="col-lg-3 col-md-12 col-sm-12">
+                                        <strong>Cedula:</strong>
+                                        <label id="cedula" type="text"
+                                            class="form-control border-primary"></label>
+                                    </div>
+
+                                    <div class="col-lg-9 col-md-12 col-sm-12">
+                                        <strong>Nombre:</strong>
+                                        <label id="nombre" type="text"
+                                            class="form-control border-primary"></label>
+                                    </div>
+                                    <div class="col-lg-3 col-md-12 col-sm-12">
+                                        <strong>Celular:</strong>
+                                        <label id="celular" type="text"
+                                            class="form-control border-primary"></label>
+                                    </div>
+                                    <div class="col-lg-9 col-md-12 col-sm-12">
+                                        <strong>Correo:</strong>
+                                        <label id="correo" type="text"
+                                            class="form-control border-primary"></label>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <strong>Rol:</strong>
+                                        <label id="rol" type="text"
+                                            class="form-control border-primary"></label>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <strong>Canton:</strong>
+                                        <label id="canton" type="text"
+                                            class="form-control border-primary"></label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<script src="/js/usuarios.js"></script>

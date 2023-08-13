@@ -7,6 +7,7 @@ module.exports = (app) => {
 
     app.get('/', index.inicio);
 
+    app.get('/usuario/:id',index.buscar);
 
     // Errores
     app.use(function (err, req, res, next) {
