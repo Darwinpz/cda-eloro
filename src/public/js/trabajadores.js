@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     var database = firebase.database();
 
-    var coleccionUsuarios = database.ref().child("usuarios");
+    var coleccionUsuarios = database.ref().child("users");
 
     var dataSet = [];
 
@@ -51,18 +51,18 @@ $(document).ready(function () {
 
     coleccionUsuarios.on('child_changed', datos => {
         
-        dataSet = [datos.key, datos.child("cedula").val(),datos.child("nombre").val(), datos.child("correo").val(), datos.child("rol").val(), datos.child("foto").val()];
+        dataSet = [datos.key, datos.child("ced").val(),datos.child("lastName").val()+" "+datos.child("firstName").val(), datos.child("email").val(), datos.child("rol").val(), datos.child("photo").val()];
         table.row(filaEditada).data(dataSet).draw();
 
     });
 
     coleccionUsuarios.on("child_added", datos => {
-        dataSet = [datos.key, datos.child("cedula").val(), datos.child("nombre").val(), datos.child("correo").val(), datos.child("rol").val(), datos.child("foto").val()];
+        dataSet = [datos.key, datos.child("ced").val(), datos.child("lastName").val()+" "+datos.child("firstName").val(), datos.child("email").val(), datos.child("rol").val(), datos.child("photo").val()];
         table.rows.add([dataSet]).draw();
     });
 
     coleccionUsuarios.on("child_removed", datos => {
-        dataSet = [datos.key, datos.child("cedula").val(), datos.child("nombre").val(), datos.child("correo").val(), datos.child("rol").val(), datos.child("foto").val()];
+        dataSet = [datos.key, datos.child("ced").val(), datos.child("lastName").val()+" "+datos.child("firstName").val(), datos.child("email").val(), datos.child("rol").val(), datos.child("photo").val()];
         table.row(filaEditada).data(dataSet).draw();
     });
 
@@ -72,22 +72,22 @@ $(document).ready(function () {
         let fila = $('#table_trabajadores').dataTable().fnGetData($(this).closest('tr'));
         let id = fila[0];
 
-        database.ref('usuarios/' + id).once('value')
+        database.ref('users/' + id).once('value')
             .then(function (datos) {
 
                 const data = datos.val()
 
                 document.getElementById("id").innerText = id;
-                document.getElementById("cedula").innerText = data.cedula;
-                document.getElementById("nombre").innerText = data.nombre;
-                document.getElementById("correo").innerText = data.correo;
+                document.getElementById("ced").innerText = data.ced;
+                document.getElementById("name").innerText = data.firstName;
+                document.getElementById("email").innerText = data.email;
                 document.getElementById("rol").innerText = data.rol;
                 document.getElementById("canton").innerText = data.canton;
-                document.getElementById("celular").innerText = data.celular;
+                document.getElementById("phone").innerText = data.phone;
 
-                if(data.foto != null){
+                if(data.photo != null){
 
-                    document.getElementById("img_trabajador").src = data.foto;
+                    document.getElementById("img_trabajador").src = data.photo;
 
                 }else{
                     document.getElementById("img_trabajador").src = "/img/perfil.png";

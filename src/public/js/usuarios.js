@@ -17,7 +17,7 @@ $(document).ready(function () {
 
     var id = document.getElementById("id").value;
 
-    database.ref('usuarios/' + id).once('value')
+    database.ref('users/' + id).once('value')
         .then(function (datos) {
 
             const data = datos.val()
@@ -25,12 +25,12 @@ $(document).ready(function () {
             if (data) {
 
                 document.getElementById("id").innerText = id;
-                document.getElementById("cedula").innerText = data.cedula;
-                document.getElementById("nombre").innerText = data.nombre;
-                document.getElementById("correo").innerText = data.correo;
+                document.getElementById("ced").innerText = data.ced;
+                document.getElementById("name").innerText = data.firstName;
+                document.getElementById("email").innerText = data.email;
                 document.getElementById("rol").innerText = data.rol;
                 document.getElementById("canton").innerText = data.canton;
-                document.getElementById("celular").innerText = data.celular;
+                document.getElementById("phone").innerText = data.phone;
 
                 if (data.foto != null) {
 
